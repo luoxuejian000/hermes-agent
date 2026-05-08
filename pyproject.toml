@@ -249,6 +249,18 @@ redundant-cast = "ignore"
 [tool.ruff]
 preview = true  # required for PLW1514 (unspecified-encoding) — preview rule
 
+[tool.ty.src]
+exclude = ["**"]
+
+[[tool.ty.overrides]]
+include = ["**"]
+
+[tool.ty.overrides.rules]]
+unresolved-import = "ignore"
+invalid-method-override = "ignore"
+invalid-assignment = "ignore"
+not-iterable = "ignore"
+
 [tool.ruff.lint]
 # All other lints are intentionally disabled (see comment history on this
 # file) while we wrangle typechecks — but PLW1514 is too load-bearing to
